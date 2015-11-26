@@ -1,0 +1,69 @@
+-- Loading resources from sqliterc
+SQLite version 3.6.20
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+[?1034hsqlite> .echo on
+sqlite> .read Pair1.sql
+.read Pair1.sql
+select count(*) from located l1,located l2
+where l1.river = l2.river and l1.city < l2.city;
+count(*)  
+----------
+1372      
+CPU Time: user 0.360945 sys 0.001000
+select count(*) from country c1,country c2
+where c1.capital < c2.capital;
+count(*)  
+----------
+29402     
+CPU Time: user 0.019997 sys 0.001000
+CPU Time: user 0.001000 sys 0.000000
+CPU Time: user 0.003000 sys 0.002000
+select c1.capital,c2.capital,l1.river
+from country c1,country c2,located l1,located l2
+where c1.capital = l1.city
+and c2.capital = l2.city
+and c1.capital < c2.capital
+and l1.river = l2.river;
+Capital     Capital     River     
+----------  ----------  ----------
+Beograd     Bratislava  Donau     
+Beograd     Budapest    Donau     
+Beograd     Wien        Donau     
+Beograd     Ljubljana   Save      
+Beograd     Zagreb      Save      
+Budapest    Wien        Donau     
+Bratislava  Budapest    Donau     
+Bratislava  Wien        Donau     
+Ljubljana   Zagreb      Save      
+Phnom Penh  Vientiane   Mekong    
+Al Qahirah  Khartoum    Nile      
+Bamako      Niamey      Niger     
+Brazzavill  Kinshasa    Zaire     
+CPU Time: user 0.012998 sys 0.000000
+select c1.capital,c2.capital,l1.river
+from country c1 cross join country c2 join located l1 join located l2
+on c1.capital < c2.capital
+and c1.capital = l1.city
+and c2.capital = l2.city
+and l1.river = l2.river;
+Capital     Capital     River     
+----------  ----------  ----------
+Beograd     Bratislava  Donau     
+Beograd     Budapest    Donau     
+Beograd     Ljubljana   Save      
+Beograd     Wien        Donau     
+Beograd     Zagreb      Save      
+Budapest    Wien        Donau     
+Bratislava  Budapest    Donau     
+Bratislava  Wien        Donau     
+Ljubljana   Zagreb      Save      
+Phnom Penh  Vientiane   Mekong    
+Al Qahirah  Khartoum    Nile      
+Bamako      Niamey      Niger     
+Brazzavill  Kinshasa    Zaire     
+CPU Time: user 0.054991 sys 0.000000
+CPU Time: user 0.000000 sys 0.000000
+CPU Time: user 0.001000 sys 0.000000
+sqlite> .quit
+.quit
