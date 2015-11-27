@@ -1,0 +1,1141 @@
+-- Loading resources from sqliterc
+SQLite version 3.6.20
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+[?1034hsqlite> .echo on
+sqlite> .read Pair3.sql
+.read Pair3.sql
+Error: near line 4: index org_country_ind already exists
+CPU Time: user 0.001000 sys 0.000000
+Error: near line 5: index org_abb_ind already exists
+CPU Time: user 0.000000 sys 0.000000
+select c1.name as Member_Country,o.name as Organization,c2.name as Based_In
+from country c1,country c2,organization o, ismember i,borders b
+where c1.code = i.country
+and i.organization = o.abbreviation and o.country = c2.code
+and ((b.country1 = c1.code and b.country2 = o.country)
+or (b.country2 = c1.code and b.country1 = o.country));
+Member_Country  Organization                 Based_In  
+--------------  ---------------------------  ----------
+Serbia          Central European Initiative  Hungary   
+Serbia          Convention of the Southeast  Romania   
+Andorra         Council of Europe            France    
+Andorra         International Chamber of Co  France    
+Andorra         International Criminal Poli  France    
+Andorra         International Organization   France    
+Andorra         United Nations Educational,  France    
+Andorra         World Tourism Organization   Spain     
+France          Bank for International Sett  Switzerlan
+France          European Organization for N  Switzerlan
+France          Euro-Atlantic Partnership C  Belgium   
+France          European Central Bank        Germany   
+France          European Investment Bank     Luxembourg
+France          Economic and Monetary Union  Belgium   
+France          European Union               Belgium   
+France          Food and Agriculture Organi  Italy     
+France          International Fund for Agri  Italy     
+France          International Federation of  Switzerlan
+France          International Labor Organiz  Switzerlan
+France          International Olympic Commi  Switzerlan
+France          International Organization   Switzerlan
+France          International Telecommunica  Switzerlan
+France          International Trade Union C  Belgium   
+France          North Atlantic Treaty Organ  Belgium   
+France          United Nations High Commiss  Switzerlan
+France          United Nations Security Cou  Switzerlan
+France          World Tourism Organization   Spain     
+France          Universal Postal Union       Switzerlan
+France          World Customs Organization   Belgium   
+France          World Health Organization    Switzerlan
+France          World Intellectual Property  Switzerlan
+France          World Meteorological Organi  Switzerlan
+Spain           Council of Europe            France    
+Spain           European Space Agency        France    
+Spain           Financial Action Task Force  France    
+Spain           International Chamber of Co  France    
+Spain           International Energy Agency  France    
+Spain           International Criminal Poli  France    
+Spain           Organization for Economic C  France    
+Spain           United Nations Educational,  France    
+Austria         Bank for International Sett  Switzerlan
+Austria         Central European Initiative  Hungary   
+Austria         European Organization for N  Switzerlan
+Austria         European Central Bank        Germany   
+Austria         Food and Agriculture Organi  Italy     
+Austria         International Federation of  Switzerlan
+Austria         International Labor Organiz  Switzerlan
+Austria         International Olympic Commi  Switzerlan
+Austria         International Organization   Switzerlan
+Austria         International Telecommunica  Switzerlan
+Austria         United Nations High Commiss  Switzerlan
+Austria         Universal Postal Union       Switzerlan
+Austria         World Federation of Trade U  Czech Repu
+Austria         World Health Organization    Switzerlan
+Austria         World Intellectual Property  Switzerlan
+Austria         World Meteorological Organi  Switzerlan
+Czech Republic  International Atomic Energy  Austria   
+Czech Republic  Nuclear Suppliers Group      Austria   
+Czech Republic  Organization for Security a  Austria   
+Czech Republic  United Nations Industrial D  Austria   
+Germany         Bank for International Sett  Switzerlan
+Germany         Council of Europe            France    
+Germany         European Organization for N  Switzerlan
+Germany         Euro-Atlantic Partnership C  Belgium   
+Germany         European Investment Bank     Luxembourg
+Germany         Economic and Monetary Union  Belgium   
+Germany         European Space Agency        France    
+Germany         European Union               Belgium   
+Germany         Financial Action Task Force  France    
+Germany         Group of 10                  France    
+Germany         International Atomic Energy  Austria   
+Germany         International Chamber of Co  France    
+Germany         International Criminal Cour  Netherland
+Germany         International Court of Just  Netherland
+Germany         International Energy Agency  France    
+Germany         International Federation of  Switzerlan
+Germany         International Labor Organiz  Switzerlan
+Germany         International Olympic Commi  Switzerlan
+Germany         International Organization   Switzerlan
+Germany         International Telecommunica  Switzerlan
+Germany         International Trade Union C  Belgium   
+Germany         International Criminal Poli  France    
+Germany         North Atlantic Treaty Organ  Belgium   
+Germany         Nuclear Suppliers Group      Austria   
+Germany         Organization for Economic C  France    
+Germany         Organization for the Prohib  Netherland
+Germany         Organization for Security a  Austria   
+Germany         United Nations Educational,  France    
+Germany         United Nations High Commiss  Switzerlan
+Germany         United Nations Industrial D  Austria   
+Germany         United Nations Relief and W  Austria   
+Germany         Universal Postal Union       Switzerlan
+Germany         World Customs Organization   Belgium   
+Germany         World Health Organization    Switzerlan
+Germany         World Intellectual Property  Switzerlan
+Germany         World Meteorological Organi  Switzerlan
+Hungary         International Atomic Energy  Austria   
+Hungary         Nuclear Suppliers Group      Austria   
+Hungary         Organization for Security a  Austria   
+Hungary         Convention of the Southeast  Romania   
+Hungary         United Nations Industrial D  Austria   
+Italy           Bank for International Sett  Switzerlan
+Italy           Council of Europe            France    
+Italy           European Organization for N  Switzerlan
+Italy           European Space Agency        France    
+Italy           Financial Action Task Force  France    
+Italy           Group of 10                  France    
+Italy           International Atomic Energy  Austria   
+Italy           International Chamber of Co  France    
+Italy           International Energy Agency  France    
+Italy           International Federation of  Switzerlan
+Italy           International Labor Organiz  Switzerlan
+Italy           International Olympic Commi  Switzerlan
+Italy           International Organization   Switzerlan
+Italy           International Telecommunica  Switzerlan
+Italy           International Criminal Poli  France    
+Italy           Nuclear Suppliers Group      Austria   
+Italy           Organization for Economic C  France    
+Italy           Organization for Security a  Austria   
+Italy           United Nations Educational,  France    
+Italy           United Nations High Commiss  Switzerlan
+Italy           United Nations Industrial D  Austria   
+Italy           United Nations Relief and W  Austria   
+Italy           Universal Postal Union       Switzerlan
+Italy           World Health Organization    Switzerlan
+Italy           World Intellectual Property  Switzerlan
+Italy           World Meteorological Organi  Switzerlan
+Liechtenstein   European Free Trade Associa  Switzerlan
+Liechtenstein   International Atomic Energy  Austria   
+Liechtenstein   International Federation of  Switzerlan
+Liechtenstein   International Olympic Commi  Switzerlan
+Liechtenstein   International Telecommunica  Switzerlan
+Liechtenstein   Organization for Security a  Austria   
+Liechtenstein   Universal Postal Union       Switzerlan
+Liechtenstein   World Intellectual Property  Switzerlan
+Slovakia        Central European Initiative  Hungary   
+Slovakia        International Atomic Energy  Austria   
+Slovakia        Nuclear Suppliers Group      Austria   
+Slovakia        Organization for Security a  Austria   
+Slovakia        United Nations Industrial D  Austria   
+Slovakia        World Federation of Trade U  Czech Repu
+Slovenia        Central European Initiative  Hungary   
+Slovenia        Food and Agriculture Organi  Italy     
+Slovenia        International Atomic Energy  Austria   
+Slovenia        Nuclear Suppliers Group      Austria   
+Slovenia        Organization for Security a  Austria   
+Slovenia        United Nations Industrial D  Austria   
+Switzerland     Council of Europe            France    
+Switzerland     European Space Agency        France    
+Switzerland     Food and Agriculture Organi  Italy     
+Switzerland     Financial Action Task Force  France    
+Switzerland     Group of 10                  France    
+Switzerland     International Atomic Energy  Austria   
+Switzerland     International Chamber of Co  France    
+Switzerland     International Energy Agency  France    
+Switzerland     International Fund for Agri  Italy     
+Switzerland     International Criminal Poli  France    
+Switzerland     Nuclear Suppliers Group      Austria   
+Switzerland     Organization for Economic C  France    
+Switzerland     International Organization   France    
+Switzerland     Organization for Security a  Austria   
+Switzerland     United Nations Educational,  France    
+Switzerland     United Nations Industrial D  Austria   
+Switzerland     United Nations Relief and W  Austria   
+Belarus         Collective Security Treaty   Russia    
+Belarus         General Confederation of Tr  Russia    
+Lithuania       Baltic Assembly              Latvia    
+Poland          World Federation of Trade U  Czech Repu
+Ukraine         Central European Initiative  Hungary   
+Ukraine         Commonwealth of Independent  Belarus   
+Ukraine         General Confederation of Tr  Russia    
+Ukraine         Convention of the Southeast  Romania   
+Russia          Conference of Interaction a  Kazakhstan
+Russia          Commonwealth of Independent  Belarus   
+Russia          Shanghai Cooperation Organi  China     
+Belgium         Council of Europe            France    
+Belgium         European Central Bank        Germany   
+Belgium         European Investment Bank     Luxembourg
+Belgium         European Space Agency        France    
+Belgium         Financial Action Task Force  France    
+Belgium         Group of 10                  France    
+Belgium         International Chamber of Co  France    
+Belgium         International Criminal Cour  Netherland
+Belgium         International Court of Just  Netherland
+Belgium         International Energy Agency  France    
+Belgium         International Criminal Poli  France    
+Belgium         Organization for Economic C  France    
+Belgium         International Organization   France    
+Belgium         Organization for the Prohib  Netherland
+Belgium         United Nations Educational,  France    
+Luxembourg      Benelux Union                Belgium   
+Luxembourg      Council of Europe            France    
+Luxembourg      Euro-Atlantic Partnership C  Belgium   
+Luxembourg      European Central Bank        Germany   
+Luxembourg      Economic and Monetary Union  Belgium   
+Luxembourg      European Space Agency        France    
+Luxembourg      European Union               Belgium   
+Luxembourg      Financial Action Task Force  France    
+Luxembourg      International Chamber of Co  France    
+Luxembourg      International Energy Agency  France    
+Luxembourg      International Trade Union C  Belgium   
+Luxembourg      International Criminal Poli  France    
+Luxembourg      North Atlantic Treaty Organ  Belgium   
+Luxembourg      Organization for Economic C  France    
+Luxembourg      International Organization   France    
+Luxembourg      United Nations Educational,  France    
+Luxembourg      World Customs Organization   Belgium   
+Netherlands     Benelux Union                Belgium   
+Netherlands     Euro-Atlantic Partnership C  Belgium   
+Netherlands     European Central Bank        Germany   
+Netherlands     Economic and Monetary Union  Belgium   
+Netherlands     European Union               Belgium   
+Netherlands     International Trade Union C  Belgium   
+Netherlands     North Atlantic Treaty Organ  Belgium   
+Netherlands     World Customs Organization   Belgium   
+Croatia         Central European Initiative  Hungary   
+Bulgaria        Convention of the Southeast  Romania   
+Romania         Central European Initiative  Hungary   
+Turkey          Economic Cooperation Organi  Iran      
+Estonia         Baltic Assembly              Latvia    
+Finland         Nordic Council               Sweden    
+Norway          Nordic Council               Sweden    
+Norway          Nordic Investment Bank       Finland   
+Sweden          Nordic Investment Bank       Finland   
+Monaco          Council of Europe            France    
+Monaco          International Chamber of Co  France    
+Monaco          International Criminal Poli  France    
+Monaco          International Organization   France    
+Monaco          United Nations Educational,  France    
+Ireland         European Bank for Reconstru  United Kin
+San Marino      Food and Agriculture Organi  Italy     
+Moldova         Organization for Democracy   Ukraine   
+Moldova         Convention of the Southeast  Romania   
+Portugal        World Tourism Organization   Spain     
+Afghanistan     Economic Cooperation Organi  Iran      
+Afghanistan     Shanghai Cooperation Organi  China     
+China           Conference of Interaction a  Kazakhstan
+China           South Asian Association for  Nepal     
+Pakistan        Economic Cooperation Organi  Iran      
+Pakistan        Shanghai Cooperation Organi  China     
+Tajikistan      Shanghai Cooperation Organi  China     
+Turkmenistan    Economic Cooperation Organi  Iran      
+Uzbekistan      Conference of Interaction a  Kazakhstan
+Georgia         General Confederation of Tr  Russia    
+Azerbaijan      Economic Cooperation Organi  Iran      
+Azerbaijan      General Confederation of Tr  Russia    
+India           South Asian Association for  Nepal     
+India           Shanghai Cooperation Organi  China     
+Malaysia        Association of Southeast As  Indonesia 
+Malaysia        Nonaligned Movement          Indonesia 
+Kazakhstan      Collective Security Treaty   Russia    
+Kazakhstan      General Confederation of Tr  Russia    
+Kazakhstan      Shanghai Cooperation Organi  China     
+Kyrgyzstan      Conference of Interaction a  Kazakhstan
+Kyrgyzstan      Shanghai Cooperation Organi  China     
+Mongolia        Shanghai Cooperation Organi  China     
+Egypt           Arab Bank for Economic Deve  Sudan     
+Timor-Leste     Association of Southeast As  Indonesia 
+Timor-Leste     Nonaligned Movement          Indonesia 
+Papua New Guin  Association of Southeast As  Indonesia 
+Papua New Guin  Nonaligned Movement          Indonesia 
+Iraq            Council of Arab Economic Un  Jordan    
+Iraq            Islamic Development Bank     Saudi Arab
+Iraq            Organization of Islamic Coo  Saudi Arab
+Jordan          Islamic Development Bank     Saudi Arab
+Jordan          Organization of Islamic Coo  Saudi Arab
+Kuwait          Gulf Cooperation Council     Saudi Arab
+Kuwait          Islamic Development Bank     Saudi Arab
+Kuwait          Organization of Islamic Coo  Saudi Arab
+Saudi Arabia    Arab Monetary Fund           United Ara
+Saudi Arabia    Council of Arab Economic Un  Jordan    
+Syria           Council of Arab Economic Un  Jordan    
+Oman            Arab Monetary Fund           United Ara
+Oman            Gulf Cooperation Council     Saudi Arab
+Oman            Islamic Development Bank     Saudi Arab
+Oman            Organization of Islamic Coo  Saudi Arab
+United Arab Em  Gulf Cooperation Council     Saudi Arab
+United Arab Em  Islamic Development Bank     Saudi Arab
+United Arab Em  Organization of Islamic Coo  Saudi Arab
+Yemen           Islamic Development Bank     Saudi Arab
+Yemen           Organization of Islamic Coo  Saudi Arab
+Qatar           Gulf Cooperation Council     Saudi Arab
+Qatar           Islamic Development Bank     Saudi Arab
+Qatar           Organization of Islamic Coo  Saudi Arab
+Belize          Agency for the Prohibition   Mexico    
+Guatemala       Central American Bank for E  Honduras  
+Guatemala       Agency for the Prohibition   Mexico    
+Guatemala       Central American Integratio  El Salvado
+Mexico          Inter-American Development   United Sta
+Mexico          International Bank for Reco  United Sta
+Mexico          International Development A  United Sta
+Mexico          International Finance Corpo  United Sta
+Mexico          International Monetary Fund  United Sta
+Mexico          Multilateral Investment Gua  United Sta
+Mexico          Organization of American St  United Sta
+Mexico          United Nations               United Sta
+Canada          Inter-American Development   United Sta
+Canada          International Bank for Reco  United Sta
+Canada          International Development A  United Sta
+Canada          International Finance Corpo  United Sta
+Canada          International Monetary Fund  United Sta
+Canada          Multilateral Investment Gua  United Sta
+Canada          Organization of American St  United Sta
+Canada          United Nations               United Sta
+Canada          United Nations Peacekeeping  United Sta
+United States   International Civil Aviatio  Canada    
+Nicaragua       Central American Bank for E  Honduras  
+El Salvador     Central American Bank for E  Honduras  
+El Salvador     Central American Common Mar  Guatemala 
+Honduras        Central American Common Mar  Guatemala 
+Honduras        Central American Integratio  El Salvado
+Colombia        Andean Community             Peru      
+Colombia        Latin American and Caribbea  Venezuela 
+Colombia        Union of South American Nat  Ecuador   
+Argentina       Latin American Integration   Uruguay   
+Bolivia         Andean Community             Peru      
+Bolivia         Southern Cone Common Market  Argentina 
+Brazil          Andean Community             Peru      
+Brazil          Latin American and Caribbea  Venezuela 
+Brazil          Latin American Integration   Uruguay   
+Brazil          Southern Cone Common Market  Argentina 
+Chile           Andean Community             Peru      
+Chile           Southern Cone Common Market  Argentina 
+Paraguay        Southern Cone Common Market  Argentina 
+Uruguay         Southern Cone Common Market  Argentina 
+Peru            Union of South American Nat  Ecuador   
+Guyana          Latin American and Caribbea  Venezuela 
+Suriname        Caribbean Community and Com  Guyana    
+Venezuela       Caribbean Community and Com  Guyana    
+Ecuador         Andean Community             Peru      
+Algeria         Arab Maghreb Union           Morocco   
+Libya           Arab Bank for Economic Deve  Sudan     
+Libya           League of Arab States        Egypt     
+Mali            African Development Bank Gr  Cote dIvoi
+Niger           Economic Community of West   Nigeria   
+Namibia         Southern African Customs Un  South Afri
+Namibia         Southern African Developmen  Botswana  
+Zaire           Economic and Monetary Commu  Central Af
+Zaire           Common Market for Eastern a  Zambia    
+Benin           Economic Community of West   Nigeria   
+Burkina Faso    African Development Bank Gr  Cote dIvoi
+Burkina Faso    Council of the Entente       Cote dIvoi
+Botswana        Southern African Customs Un  South Afri
+South Africa    Southern African Developmen  Botswana  
+Zimbabwe        Common Market for Eastern a  Zambia    
+Zimbabwe        Southern African Developmen  Botswana  
+Ghana           African Development Bank Gr  Cote dIvoi
+Rwanda          East African Development Ba  Uganda    
+Tanzania        East African Development Ba  Uganda    
+Cameroon        Central African States Deve  Congo     
+Cameroon        Economic and Monetary Commu  Central Af
+Central Africa  Central African States Deve  Congo     
+Chad            Economic and Monetary Commu  Central Af
+Gabon           Central African States Deve  Congo     
+Sudan           African Union                Ethiopia  
+Sudan           League of Arab States        Egypt     
+South Sudan     African Union                Ethiopia  
+Guinea          African Development Bank Gr  Cote dIvoi
+Liberia         African Development Bank Gr  Cote dIvoi
+Djibouti        African Union                Ethiopia  
+Eritrea         African Union                Ethiopia  
+Somalia         African Union                Ethiopia  
+Kenya           African Union                Ethiopia  
+Kenya           East African Development Ba  Uganda    
+Lesotho         Southern African Customs Un  South Afri
+Malawi          Common Market for Eastern a  Zambia    
+Swaziland       Southern African Customs Un  South Afri
+CPU Time: user 0.052992 sys 0.001000
+select c1.name as Member_Country,o.name as Organization,c2.name as Based_In
+from country c1,country c2,organization o, ismember i,borders b
+where c1.code = i.country
+and i.organization = +o.abbreviation and o.country = c2.code
+and ((b.country1 = c1.code and b.country2 = o.country)
+or (b.country2 = c1.code and b.country1 = o.country));
+Member_Country  Organization                 Based_In  
+--------------  ---------------------------  ----------
+Serbia          Central European Initiative  Hungary   
+Serbia          Convention of the Southeast  Romania   
+Andorra         Council of Europe            France    
+Andorra         International Chamber of Co  France    
+Andorra         International Criminal Poli  France    
+Andorra         International Organization   France    
+Andorra         United Nations Educational,  France    
+Andorra         World Tourism Organization   Spain     
+France          Bank for International Sett  Switzerlan
+France          European Organization for N  Switzerlan
+France          Euro-Atlantic Partnership C  Belgium   
+France          European Central Bank        Germany   
+France          European Investment Bank     Luxembourg
+France          Economic and Monetary Union  Belgium   
+France          European Union               Belgium   
+France          Food and Agriculture Organi  Italy     
+France          International Fund for Agri  Italy     
+France          International Federation of  Switzerlan
+France          International Labor Organiz  Switzerlan
+France          International Olympic Commi  Switzerlan
+France          International Organization   Switzerlan
+France          International Telecommunica  Switzerlan
+France          International Trade Union C  Belgium   
+France          North Atlantic Treaty Organ  Belgium   
+France          United Nations High Commiss  Switzerlan
+France          United Nations Security Cou  Switzerlan
+France          World Tourism Organization   Spain     
+France          Universal Postal Union       Switzerlan
+France          World Customs Organization   Belgium   
+France          World Health Organization    Switzerlan
+France          World Intellectual Property  Switzerlan
+France          World Meteorological Organi  Switzerlan
+Spain           Council of Europe            France    
+Spain           European Space Agency        France    
+Spain           Financial Action Task Force  France    
+Spain           International Chamber of Co  France    
+Spain           International Energy Agency  France    
+Spain           International Criminal Poli  France    
+Spain           Organization for Economic C  France    
+Spain           United Nations Educational,  France    
+Austria         Bank for International Sett  Switzerlan
+Austria         Central European Initiative  Hungary   
+Austria         European Organization for N  Switzerlan
+Austria         European Central Bank        Germany   
+Austria         Food and Agriculture Organi  Italy     
+Austria         International Federation of  Switzerlan
+Austria         International Labor Organiz  Switzerlan
+Austria         International Olympic Commi  Switzerlan
+Austria         International Organization   Switzerlan
+Austria         International Telecommunica  Switzerlan
+Austria         United Nations High Commiss  Switzerlan
+Austria         Universal Postal Union       Switzerlan
+Austria         World Federation of Trade U  Czech Repu
+Austria         World Health Organization    Switzerlan
+Austria         World Intellectual Property  Switzerlan
+Austria         World Meteorological Organi  Switzerlan
+Czech Republic  International Atomic Energy  Austria   
+Czech Republic  Nuclear Suppliers Group      Austria   
+Czech Republic  Organization for Security a  Austria   
+Czech Republic  United Nations Industrial D  Austria   
+Germany         Bank for International Sett  Switzerlan
+Germany         Council of Europe            France    
+Germany         European Organization for N  Switzerlan
+Germany         Euro-Atlantic Partnership C  Belgium   
+Germany         European Investment Bank     Luxembourg
+Germany         Economic and Monetary Union  Belgium   
+Germany         European Space Agency        France    
+Germany         European Union               Belgium   
+Germany         Financial Action Task Force  France    
+Germany         Group of 10                  France    
+Germany         International Atomic Energy  Austria   
+Germany         International Chamber of Co  France    
+Germany         International Criminal Cour  Netherland
+Germany         International Court of Just  Netherland
+Germany         International Energy Agency  France    
+Germany         International Federation of  Switzerlan
+Germany         International Labor Organiz  Switzerlan
+Germany         International Olympic Commi  Switzerlan
+Germany         International Organization   Switzerlan
+Germany         International Telecommunica  Switzerlan
+Germany         International Trade Union C  Belgium   
+Germany         International Criminal Poli  France    
+Germany         North Atlantic Treaty Organ  Belgium   
+Germany         Nuclear Suppliers Group      Austria   
+Germany         Organization for Economic C  France    
+Germany         Organization for the Prohib  Netherland
+Germany         Organization for Security a  Austria   
+Germany         United Nations Educational,  France    
+Germany         United Nations High Commiss  Switzerlan
+Germany         United Nations Industrial D  Austria   
+Germany         United Nations Relief and W  Austria   
+Germany         Universal Postal Union       Switzerlan
+Germany         World Customs Organization   Belgium   
+Germany         World Health Organization    Switzerlan
+Germany         World Intellectual Property  Switzerlan
+Germany         World Meteorological Organi  Switzerlan
+Hungary         International Atomic Energy  Austria   
+Hungary         Nuclear Suppliers Group      Austria   
+Hungary         Organization for Security a  Austria   
+Hungary         Convention of the Southeast  Romania   
+Hungary         United Nations Industrial D  Austria   
+Italy           Bank for International Sett  Switzerlan
+Italy           Council of Europe            France    
+Italy           European Organization for N  Switzerlan
+Italy           European Space Agency        France    
+Italy           Financial Action Task Force  France    
+Italy           Group of 10                  France    
+Italy           International Atomic Energy  Austria   
+Italy           International Chamber of Co  France    
+Italy           International Energy Agency  France    
+Italy           International Federation of  Switzerlan
+Italy           International Labor Organiz  Switzerlan
+Italy           International Olympic Commi  Switzerlan
+Italy           International Organization   Switzerlan
+Italy           International Telecommunica  Switzerlan
+Italy           International Criminal Poli  France    
+Italy           Nuclear Suppliers Group      Austria   
+Italy           Organization for Economic C  France    
+Italy           Organization for Security a  Austria   
+Italy           United Nations Educational,  France    
+Italy           United Nations High Commiss  Switzerlan
+Italy           United Nations Industrial D  Austria   
+Italy           United Nations Relief and W  Austria   
+Italy           Universal Postal Union       Switzerlan
+Italy           World Health Organization    Switzerlan
+Italy           World Intellectual Property  Switzerlan
+Italy           World Meteorological Organi  Switzerlan
+Liechtenstein   European Free Trade Associa  Switzerlan
+Liechtenstein   International Atomic Energy  Austria   
+Liechtenstein   International Federation of  Switzerlan
+Liechtenstein   International Olympic Commi  Switzerlan
+Liechtenstein   International Telecommunica  Switzerlan
+Liechtenstein   Organization for Security a  Austria   
+Liechtenstein   Universal Postal Union       Switzerlan
+Liechtenstein   World Intellectual Property  Switzerlan
+Slovakia        Central European Initiative  Hungary   
+Slovakia        International Atomic Energy  Austria   
+Slovakia        Nuclear Suppliers Group      Austria   
+Slovakia        Organization for Security a  Austria   
+Slovakia        United Nations Industrial D  Austria   
+Slovakia        World Federation of Trade U  Czech Repu
+Slovenia        Central European Initiative  Hungary   
+Slovenia        Food and Agriculture Organi  Italy     
+Slovenia        International Atomic Energy  Austria   
+Slovenia        Nuclear Suppliers Group      Austria   
+Slovenia        Organization for Security a  Austria   
+Slovenia        United Nations Industrial D  Austria   
+Switzerland     Council of Europe            France    
+Switzerland     European Space Agency        France    
+Switzerland     Food and Agriculture Organi  Italy     
+Switzerland     Financial Action Task Force  France    
+Switzerland     Group of 10                  France    
+Switzerland     International Atomic Energy  Austria   
+Switzerland     International Chamber of Co  France    
+Switzerland     International Energy Agency  France    
+Switzerland     International Fund for Agri  Italy     
+Switzerland     International Criminal Poli  France    
+Switzerland     Nuclear Suppliers Group      Austria   
+Switzerland     Organization for Economic C  France    
+Switzerland     International Organization   France    
+Switzerland     Organization for Security a  Austria   
+Switzerland     United Nations Educational,  France    
+Switzerland     United Nations Industrial D  Austria   
+Switzerland     United Nations Relief and W  Austria   
+Belarus         Collective Security Treaty   Russia    
+Belarus         General Confederation of Tr  Russia    
+Lithuania       Baltic Assembly              Latvia    
+Poland          World Federation of Trade U  Czech Repu
+Ukraine         Central European Initiative  Hungary   
+Ukraine         Commonwealth of Independent  Belarus   
+Ukraine         General Confederation of Tr  Russia    
+Ukraine         Convention of the Southeast  Romania   
+Russia          Conference of Interaction a  Kazakhstan
+Russia          Commonwealth of Independent  Belarus   
+Russia          Shanghai Cooperation Organi  China     
+Belgium         Council of Europe            France    
+Belgium         European Central Bank        Germany   
+Belgium         European Investment Bank     Luxembourg
+Belgium         European Space Agency        France    
+Belgium         Financial Action Task Force  France    
+Belgium         Group of 10                  France    
+Belgium         International Chamber of Co  France    
+Belgium         International Criminal Cour  Netherland
+Belgium         International Court of Just  Netherland
+Belgium         International Energy Agency  France    
+Belgium         International Criminal Poli  France    
+Belgium         Organization for Economic C  France    
+Belgium         International Organization   France    
+Belgium         Organization for the Prohib  Netherland
+Belgium         United Nations Educational,  France    
+Luxembourg      Benelux Union                Belgium   
+Luxembourg      Council of Europe            France    
+Luxembourg      Euro-Atlantic Partnership C  Belgium   
+Luxembourg      European Central Bank        Germany   
+Luxembourg      Economic and Monetary Union  Belgium   
+Luxembourg      European Space Agency        France    
+Luxembourg      European Union               Belgium   
+Luxembourg      Financial Action Task Force  France    
+Luxembourg      International Chamber of Co  France    
+Luxembourg      International Energy Agency  France    
+Luxembourg      International Trade Union C  Belgium   
+Luxembourg      International Criminal Poli  France    
+Luxembourg      North Atlantic Treaty Organ  Belgium   
+Luxembourg      Organization for Economic C  France    
+Luxembourg      International Organization   France    
+Luxembourg      United Nations Educational,  France    
+Luxembourg      World Customs Organization   Belgium   
+Netherlands     Benelux Union                Belgium   
+Netherlands     Euro-Atlantic Partnership C  Belgium   
+Netherlands     European Central Bank        Germany   
+Netherlands     Economic and Monetary Union  Belgium   
+Netherlands     European Union               Belgium   
+Netherlands     International Trade Union C  Belgium   
+Netherlands     North Atlantic Treaty Organ  Belgium   
+Netherlands     World Customs Organization   Belgium   
+Croatia         Central European Initiative  Hungary   
+Bulgaria        Convention of the Southeast  Romania   
+Romania         Central European Initiative  Hungary   
+Turkey          Economic Cooperation Organi  Iran      
+Estonia         Baltic Assembly              Latvia    
+Finland         Nordic Council               Sweden    
+Norway          Nordic Council               Sweden    
+Norway          Nordic Investment Bank       Finland   
+Sweden          Nordic Investment Bank       Finland   
+Monaco          Council of Europe            France    
+Monaco          International Chamber of Co  France    
+Monaco          International Criminal Poli  France    
+Monaco          International Organization   France    
+Monaco          United Nations Educational,  France    
+Ireland         European Bank for Reconstru  United Kin
+San Marino      Food and Agriculture Organi  Italy     
+Moldova         Organization for Democracy   Ukraine   
+Moldova         Convention of the Southeast  Romania   
+Portugal        World Tourism Organization   Spain     
+Afghanistan     Economic Cooperation Organi  Iran      
+Afghanistan     Shanghai Cooperation Organi  China     
+China           Conference of Interaction a  Kazakhstan
+China           South Asian Association for  Nepal     
+Pakistan        Economic Cooperation Organi  Iran      
+Pakistan        Shanghai Cooperation Organi  China     
+Tajikistan      Shanghai Cooperation Organi  China     
+Turkmenistan    Economic Cooperation Organi  Iran      
+Uzbekistan      Conference of Interaction a  Kazakhstan
+Georgia         General Confederation of Tr  Russia    
+Azerbaijan      Economic Cooperation Organi  Iran      
+Azerbaijan      General Confederation of Tr  Russia    
+India           South Asian Association for  Nepal     
+India           Shanghai Cooperation Organi  China     
+Malaysia        Association of Southeast As  Indonesia 
+Malaysia        Nonaligned Movement          Indonesia 
+Kazakhstan      Collective Security Treaty   Russia    
+Kazakhstan      General Confederation of Tr  Russia    
+Kazakhstan      Shanghai Cooperation Organi  China     
+Kyrgyzstan      Conference of Interaction a  Kazakhstan
+Kyrgyzstan      Shanghai Cooperation Organi  China     
+Mongolia        Shanghai Cooperation Organi  China     
+Egypt           Arab Bank for Economic Deve  Sudan     
+Timor-Leste     Association of Southeast As  Indonesia 
+Timor-Leste     Nonaligned Movement          Indonesia 
+Papua New Guin  Association of Southeast As  Indonesia 
+Papua New Guin  Nonaligned Movement          Indonesia 
+Iraq            Council of Arab Economic Un  Jordan    
+Iraq            Islamic Development Bank     Saudi Arab
+Iraq            Organization of Islamic Coo  Saudi Arab
+Jordan          Islamic Development Bank     Saudi Arab
+Jordan          Organization of Islamic Coo  Saudi Arab
+Kuwait          Gulf Cooperation Council     Saudi Arab
+Kuwait          Islamic Development Bank     Saudi Arab
+Kuwait          Organization of Islamic Coo  Saudi Arab
+Saudi Arabia    Arab Monetary Fund           United Ara
+Saudi Arabia    Council of Arab Economic Un  Jordan    
+Syria           Council of Arab Economic Un  Jordan    
+Oman            Arab Monetary Fund           United Ara
+Oman            Gulf Cooperation Council     Saudi Arab
+Oman            Islamic Development Bank     Saudi Arab
+Oman            Organization of Islamic Coo  Saudi Arab
+United Arab Em  Gulf Cooperation Council     Saudi Arab
+United Arab Em  Islamic Development Bank     Saudi Arab
+United Arab Em  Organization of Islamic Coo  Saudi Arab
+Yemen           Islamic Development Bank     Saudi Arab
+Yemen           Organization of Islamic Coo  Saudi Arab
+Qatar           Gulf Cooperation Council     Saudi Arab
+Qatar           Islamic Development Bank     Saudi Arab
+Qatar           Organization of Islamic Coo  Saudi Arab
+Belize          Agency for the Prohibition   Mexico    
+Guatemala       Central American Bank for E  Honduras  
+Guatemala       Agency for the Prohibition   Mexico    
+Guatemala       Central American Integratio  El Salvado
+Mexico          Inter-American Development   United Sta
+Mexico          International Bank for Reco  United Sta
+Mexico          International Development A  United Sta
+Mexico          International Finance Corpo  United Sta
+Mexico          International Monetary Fund  United Sta
+Mexico          Multilateral Investment Gua  United Sta
+Mexico          Organization of American St  United Sta
+Mexico          United Nations               United Sta
+Canada          Inter-American Development   United Sta
+Canada          International Bank for Reco  United Sta
+Canada          International Development A  United Sta
+Canada          International Finance Corpo  United Sta
+Canada          International Monetary Fund  United Sta
+Canada          Multilateral Investment Gua  United Sta
+Canada          Organization of American St  United Sta
+Canada          United Nations               United Sta
+Canada          United Nations Peacekeeping  United Sta
+United States   International Civil Aviatio  Canada    
+Nicaragua       Central American Bank for E  Honduras  
+El Salvador     Central American Bank for E  Honduras  
+El Salvador     Central American Common Mar  Guatemala 
+Honduras        Central American Common Mar  Guatemala 
+Honduras        Central American Integratio  El Salvado
+Colombia        Andean Community             Peru      
+Colombia        Latin American and Caribbea  Venezuela 
+Colombia        Union of South American Nat  Ecuador   
+Argentina       Latin American Integration   Uruguay   
+Bolivia         Andean Community             Peru      
+Bolivia         Southern Cone Common Market  Argentina 
+Brazil          Andean Community             Peru      
+Brazil          Latin American and Caribbea  Venezuela 
+Brazil          Latin American Integration   Uruguay   
+Brazil          Southern Cone Common Market  Argentina 
+Chile           Andean Community             Peru      
+Chile           Southern Cone Common Market  Argentina 
+Paraguay        Southern Cone Common Market  Argentina 
+Uruguay         Southern Cone Common Market  Argentina 
+Peru            Union of South American Nat  Ecuador   
+Guyana          Latin American and Caribbea  Venezuela 
+Suriname        Caribbean Community and Com  Guyana    
+Venezuela       Caribbean Community and Com  Guyana    
+Ecuador         Andean Community             Peru      
+Algeria         Arab Maghreb Union           Morocco   
+Libya           Arab Bank for Economic Deve  Sudan     
+Libya           League of Arab States        Egypt     
+Mali            African Development Bank Gr  Cote dIvoi
+Niger           Economic Community of West   Nigeria   
+Namibia         Southern African Customs Un  South Afri
+Namibia         Southern African Developmen  Botswana  
+Zaire           Economic and Monetary Commu  Central Af
+Zaire           Common Market for Eastern a  Zambia    
+Benin           Economic Community of West   Nigeria   
+Burkina Faso    African Development Bank Gr  Cote dIvoi
+Burkina Faso    Council of the Entente       Cote dIvoi
+Botswana        Southern African Customs Un  South Afri
+South Africa    Southern African Developmen  Botswana  
+Zimbabwe        Common Market for Eastern a  Zambia    
+Zimbabwe        Southern African Developmen  Botswana  
+Ghana           African Development Bank Gr  Cote dIvoi
+Rwanda          East African Development Ba  Uganda    
+Tanzania        East African Development Ba  Uganda    
+Cameroon        Central African States Deve  Congo     
+Cameroon        Economic and Monetary Commu  Central Af
+Central Africa  Central African States Deve  Congo     
+Chad            Economic and Monetary Commu  Central Af
+Gabon           Central African States Deve  Congo     
+Sudan           African Union                Ethiopia  
+Sudan           League of Arab States        Egypt     
+South Sudan     African Union                Ethiopia  
+Guinea          African Development Bank Gr  Cote dIvoi
+Liberia         African Development Bank Gr  Cote dIvoi
+Djibouti        African Union                Ethiopia  
+Eritrea         African Union                Ethiopia  
+Somalia         African Union                Ethiopia  
+Kenya           African Union                Ethiopia  
+Kenya           East African Development Ba  Uganda    
+Lesotho         Southern African Customs Un  South Afri
+Malawi          Common Market for Eastern a  Zambia    
+Swaziland       Southern African Customs Un  South Afri
+CPU Time: user 3.550460 sys 0.002000
+select c1.name as Member_Country,o.name as Organization,c2.name as Based_In
+from country c1,country c2,organization o, ismember i,borders b
+where c1.code = i.country
+and i.organization = o.abbreviation and +o.country = c2.code
+and ((b.country1 = c1.code and b.country2 = o.country)
+or (b.country2 = c1.code and b.country1 = o.country));
+Member_Country  Organization                 Based_In  
+--------------  ---------------------------  ----------
+Serbia          Central European Initiative  Hungary   
+Serbia          Convention of the Southeast  Romania   
+Andorra         Council of Europe            France    
+Andorra         International Chamber of Co  France    
+Andorra         International Criminal Poli  France    
+Andorra         International Organization   France    
+Andorra         United Nations Educational,  France    
+Andorra         World Tourism Organization   Spain     
+France          Bank for International Sett  Switzerlan
+France          European Organization for N  Switzerlan
+France          Euro-Atlantic Partnership C  Belgium   
+France          European Central Bank        Germany   
+France          European Investment Bank     Luxembourg
+France          Economic and Monetary Union  Belgium   
+France          European Union               Belgium   
+France          Food and Agriculture Organi  Italy     
+France          International Fund for Agri  Italy     
+France          International Federation of  Switzerlan
+France          International Labor Organiz  Switzerlan
+France          International Olympic Commi  Switzerlan
+France          International Organization   Switzerlan
+France          International Telecommunica  Switzerlan
+France          International Trade Union C  Belgium   
+France          North Atlantic Treaty Organ  Belgium   
+France          United Nations High Commiss  Switzerlan
+France          United Nations Security Cou  Switzerlan
+France          World Tourism Organization   Spain     
+France          Universal Postal Union       Switzerlan
+France          World Customs Organization   Belgium   
+France          World Health Organization    Switzerlan
+France          World Intellectual Property  Switzerlan
+France          World Meteorological Organi  Switzerlan
+Spain           Council of Europe            France    
+Spain           European Space Agency        France    
+Spain           Financial Action Task Force  France    
+Spain           International Chamber of Co  France    
+Spain           International Energy Agency  France    
+Spain           International Criminal Poli  France    
+Spain           Organization for Economic C  France    
+Spain           United Nations Educational,  France    
+Austria         Bank for International Sett  Switzerlan
+Austria         Central European Initiative  Hungary   
+Austria         European Organization for N  Switzerlan
+Austria         European Central Bank        Germany   
+Austria         Food and Agriculture Organi  Italy     
+Austria         International Federation of  Switzerlan
+Austria         International Labor Organiz  Switzerlan
+Austria         International Olympic Commi  Switzerlan
+Austria         International Organization   Switzerlan
+Austria         International Telecommunica  Switzerlan
+Austria         United Nations High Commiss  Switzerlan
+Austria         Universal Postal Union       Switzerlan
+Austria         World Federation of Trade U  Czech Repu
+Austria         World Health Organization    Switzerlan
+Austria         World Intellectual Property  Switzerlan
+Austria         World Meteorological Organi  Switzerlan
+Czech Republic  International Atomic Energy  Austria   
+Czech Republic  Nuclear Suppliers Group      Austria   
+Czech Republic  Organization for Security a  Austria   
+Czech Republic  United Nations Industrial D  Austria   
+Germany         Bank for International Sett  Switzerlan
+Germany         Council of Europe            France    
+Germany         European Organization for N  Switzerlan
+Germany         Euro-Atlantic Partnership C  Belgium   
+Germany         European Investment Bank     Luxembourg
+Germany         Economic and Monetary Union  Belgium   
+Germany         European Space Agency        France    
+Germany         European Union               Belgium   
+Germany         Financial Action Task Force  France    
+Germany         Group of 10                  France    
+Germany         International Atomic Energy  Austria   
+Germany         International Chamber of Co  France    
+Germany         International Criminal Cour  Netherland
+Germany         International Court of Just  Netherland
+Germany         International Energy Agency  France    
+Germany         International Federation of  Switzerlan
+Germany         International Labor Organiz  Switzerlan
+Germany         International Olympic Commi  Switzerlan
+Germany         International Organization   Switzerlan
+Germany         International Telecommunica  Switzerlan
+Germany         International Trade Union C  Belgium   
+Germany         International Criminal Poli  France    
+Germany         North Atlantic Treaty Organ  Belgium   
+Germany         Nuclear Suppliers Group      Austria   
+Germany         Organization for Economic C  France    
+Germany         Organization for the Prohib  Netherland
+Germany         Organization for Security a  Austria   
+Germany         United Nations Educational,  France    
+Germany         United Nations High Commiss  Switzerlan
+Germany         United Nations Industrial D  Austria   
+Germany         United Nations Relief and W  Austria   
+Germany         Universal Postal Union       Switzerlan
+Germany         World Customs Organization   Belgium   
+Germany         World Health Organization    Switzerlan
+Germany         World Intellectual Property  Switzerlan
+Germany         World Meteorological Organi  Switzerlan
+Hungary         International Atomic Energy  Austria   
+Hungary         Nuclear Suppliers Group      Austria   
+Hungary         Organization for Security a  Austria   
+Hungary         Convention of the Southeast  Romania   
+Hungary         United Nations Industrial D  Austria   
+Italy           Bank for International Sett  Switzerlan
+Italy           Council of Europe            France    
+Italy           European Organization for N  Switzerlan
+Italy           European Space Agency        France    
+Italy           Financial Action Task Force  France    
+Italy           Group of 10                  France    
+Italy           International Atomic Energy  Austria   
+Italy           International Chamber of Co  France    
+Italy           International Energy Agency  France    
+Italy           International Federation of  Switzerlan
+Italy           International Labor Organiz  Switzerlan
+Italy           International Olympic Commi  Switzerlan
+Italy           International Organization   Switzerlan
+Italy           International Telecommunica  Switzerlan
+Italy           International Criminal Poli  France    
+Italy           Nuclear Suppliers Group      Austria   
+Italy           Organization for Economic C  France    
+Italy           Organization for Security a  Austria   
+Italy           United Nations Educational,  France    
+Italy           United Nations High Commiss  Switzerlan
+Italy           United Nations Industrial D  Austria   
+Italy           United Nations Relief and W  Austria   
+Italy           Universal Postal Union       Switzerlan
+Italy           World Health Organization    Switzerlan
+Italy           World Intellectual Property  Switzerlan
+Italy           World Meteorological Organi  Switzerlan
+Liechtenstein   European Free Trade Associa  Switzerlan
+Liechtenstein   International Atomic Energy  Austria   
+Liechtenstein   International Federation of  Switzerlan
+Liechtenstein   International Olympic Commi  Switzerlan
+Liechtenstein   International Telecommunica  Switzerlan
+Liechtenstein   Organization for Security a  Austria   
+Liechtenstein   Universal Postal Union       Switzerlan
+Liechtenstein   World Intellectual Property  Switzerlan
+Slovakia        Central European Initiative  Hungary   
+Slovakia        International Atomic Energy  Austria   
+Slovakia        Nuclear Suppliers Group      Austria   
+Slovakia        Organization for Security a  Austria   
+Slovakia        United Nations Industrial D  Austria   
+Slovakia        World Federation of Trade U  Czech Repu
+Slovenia        Central European Initiative  Hungary   
+Slovenia        Food and Agriculture Organi  Italy     
+Slovenia        International Atomic Energy  Austria   
+Slovenia        Nuclear Suppliers Group      Austria   
+Slovenia        Organization for Security a  Austria   
+Slovenia        United Nations Industrial D  Austria   
+Switzerland     Council of Europe            France    
+Switzerland     European Space Agency        France    
+Switzerland     Food and Agriculture Organi  Italy     
+Switzerland     Financial Action Task Force  France    
+Switzerland     Group of 10                  France    
+Switzerland     International Atomic Energy  Austria   
+Switzerland     International Chamber of Co  France    
+Switzerland     International Energy Agency  France    
+Switzerland     International Fund for Agri  Italy     
+Switzerland     International Criminal Poli  France    
+Switzerland     Nuclear Suppliers Group      Austria   
+Switzerland     Organization for Economic C  France    
+Switzerland     International Organization   France    
+Switzerland     Organization for Security a  Austria   
+Switzerland     United Nations Educational,  France    
+Switzerland     United Nations Industrial D  Austria   
+Switzerland     United Nations Relief and W  Austria   
+Belarus         Collective Security Treaty   Russia    
+Belarus         General Confederation of Tr  Russia    
+Lithuania       Baltic Assembly              Latvia    
+Poland          World Federation of Trade U  Czech Repu
+Ukraine         Central European Initiative  Hungary   
+Ukraine         Commonwealth of Independent  Belarus   
+Ukraine         General Confederation of Tr  Russia    
+Ukraine         Convention of the Southeast  Romania   
+Russia          Conference of Interaction a  Kazakhstan
+Russia          Commonwealth of Independent  Belarus   
+Russia          Shanghai Cooperation Organi  China     
+Belgium         Council of Europe            France    
+Belgium         European Central Bank        Germany   
+Belgium         European Investment Bank     Luxembourg
+Belgium         European Space Agency        France    
+Belgium         Financial Action Task Force  France    
+Belgium         Group of 10                  France    
+Belgium         International Chamber of Co  France    
+Belgium         International Criminal Cour  Netherland
+Belgium         International Court of Just  Netherland
+Belgium         International Energy Agency  France    
+Belgium         International Criminal Poli  France    
+Belgium         Organization for Economic C  France    
+Belgium         International Organization   France    
+Belgium         Organization for the Prohib  Netherland
+Belgium         United Nations Educational,  France    
+Luxembourg      Benelux Union                Belgium   
+Luxembourg      Council of Europe            France    
+Luxembourg      Euro-Atlantic Partnership C  Belgium   
+Luxembourg      European Central Bank        Germany   
+Luxembourg      Economic and Monetary Union  Belgium   
+Luxembourg      European Space Agency        France    
+Luxembourg      European Union               Belgium   
+Luxembourg      Financial Action Task Force  France    
+Luxembourg      International Chamber of Co  France    
+Luxembourg      International Energy Agency  France    
+Luxembourg      International Trade Union C  Belgium   
+Luxembourg      International Criminal Poli  France    
+Luxembourg      North Atlantic Treaty Organ  Belgium   
+Luxembourg      Organization for Economic C  France    
+Luxembourg      International Organization   France    
+Luxembourg      United Nations Educational,  France    
+Luxembourg      World Customs Organization   Belgium   
+Netherlands     Benelux Union                Belgium   
+Netherlands     Euro-Atlantic Partnership C  Belgium   
+Netherlands     European Central Bank        Germany   
+Netherlands     Economic and Monetary Union  Belgium   
+Netherlands     European Union               Belgium   
+Netherlands     International Trade Union C  Belgium   
+Netherlands     North Atlantic Treaty Organ  Belgium   
+Netherlands     World Customs Organization   Belgium   
+Croatia         Central European Initiative  Hungary   
+Bulgaria        Convention of the Southeast  Romania   
+Romania         Central European Initiative  Hungary   
+Turkey          Economic Cooperation Organi  Iran      
+Estonia         Baltic Assembly              Latvia    
+Finland         Nordic Council               Sweden    
+Norway          Nordic Council               Sweden    
+Norway          Nordic Investment Bank       Finland   
+Sweden          Nordic Investment Bank       Finland   
+Monaco          Council of Europe            France    
+Monaco          International Chamber of Co  France    
+Monaco          International Criminal Poli  France    
+Monaco          International Organization   France    
+Monaco          United Nations Educational,  France    
+Ireland         European Bank for Reconstru  United Kin
+San Marino      Food and Agriculture Organi  Italy     
+Moldova         Organization for Democracy   Ukraine   
+Moldova         Convention of the Southeast  Romania   
+Portugal        World Tourism Organization   Spain     
+Afghanistan     Economic Cooperation Organi  Iran      
+Afghanistan     Shanghai Cooperation Organi  China     
+China           Conference of Interaction a  Kazakhstan
+China           South Asian Association for  Nepal     
+Pakistan        Economic Cooperation Organi  Iran      
+Pakistan        Shanghai Cooperation Organi  China     
+Tajikistan      Shanghai Cooperation Organi  China     
+Turkmenistan    Economic Cooperation Organi  Iran      
+Uzbekistan      Conference of Interaction a  Kazakhstan
+Georgia         General Confederation of Tr  Russia    
+Azerbaijan      Economic Cooperation Organi  Iran      
+Azerbaijan      General Confederation of Tr  Russia    
+India           South Asian Association for  Nepal     
+India           Shanghai Cooperation Organi  China     
+Malaysia        Association of Southeast As  Indonesia 
+Malaysia        Nonaligned Movement          Indonesia 
+Kazakhstan      Collective Security Treaty   Russia    
+Kazakhstan      General Confederation of Tr  Russia    
+Kazakhstan      Shanghai Cooperation Organi  China     
+Kyrgyzstan      Conference of Interaction a  Kazakhstan
+Kyrgyzstan      Shanghai Cooperation Organi  China     
+Mongolia        Shanghai Cooperation Organi  China     
+Egypt           Arab Bank for Economic Deve  Sudan     
+Timor-Leste     Association of Southeast As  Indonesia 
+Timor-Leste     Nonaligned Movement          Indonesia 
+Papua New Guin  Association of Southeast As  Indonesia 
+Papua New Guin  Nonaligned Movement          Indonesia 
+Iraq            Council of Arab Economic Un  Jordan    
+Iraq            Islamic Development Bank     Saudi Arab
+Iraq            Organization of Islamic Coo  Saudi Arab
+Jordan          Islamic Development Bank     Saudi Arab
+Jordan          Organization of Islamic Coo  Saudi Arab
+Kuwait          Gulf Cooperation Council     Saudi Arab
+Kuwait          Islamic Development Bank     Saudi Arab
+Kuwait          Organization of Islamic Coo  Saudi Arab
+Saudi Arabia    Arab Monetary Fund           United Ara
+Saudi Arabia    Council of Arab Economic Un  Jordan    
+Syria           Council of Arab Economic Un  Jordan    
+Oman            Arab Monetary Fund           United Ara
+Oman            Gulf Cooperation Council     Saudi Arab
+Oman            Islamic Development Bank     Saudi Arab
+Oman            Organization of Islamic Coo  Saudi Arab
+United Arab Em  Gulf Cooperation Council     Saudi Arab
+United Arab Em  Islamic Development Bank     Saudi Arab
+United Arab Em  Organization of Islamic Coo  Saudi Arab
+Yemen           Islamic Development Bank     Saudi Arab
+Yemen           Organization of Islamic Coo  Saudi Arab
+Qatar           Gulf Cooperation Council     Saudi Arab
+Qatar           Islamic Development Bank     Saudi Arab
+Qatar           Organization of Islamic Coo  Saudi Arab
+Belize          Agency for the Prohibition   Mexico    
+Guatemala       Central American Bank for E  Honduras  
+Guatemala       Agency for the Prohibition   Mexico    
+Guatemala       Central American Integratio  El Salvado
+Mexico          Inter-American Development   United Sta
+Mexico          International Bank for Reco  United Sta
+Mexico          International Development A  United Sta
+Mexico          International Finance Corpo  United Sta
+Mexico          International Monetary Fund  United Sta
+Mexico          Multilateral Investment Gua  United Sta
+Mexico          Organization of American St  United Sta
+Mexico          United Nations               United Sta
+Canada          Inter-American Development   United Sta
+Canada          International Bank for Reco  United Sta
+Canada          International Development A  United Sta
+Canada          International Finance Corpo  United Sta
+Canada          International Monetary Fund  United Sta
+Canada          Multilateral Investment Gua  United Sta
+Canada          Organization of American St  United Sta
+Canada          United Nations               United Sta
+Canada          United Nations Peacekeeping  United Sta
+United States   International Civil Aviatio  Canada    
+Nicaragua       Central American Bank for E  Honduras  
+El Salvador     Central American Bank for E  Honduras  
+El Salvador     Central American Common Mar  Guatemala 
+Honduras        Central American Common Mar  Guatemala 
+Honduras        Central American Integratio  El Salvado
+Colombia        Andean Community             Peru      
+Colombia        Latin American and Caribbea  Venezuela 
+Colombia        Union of South American Nat  Ecuador   
+Argentina       Latin American Integration   Uruguay   
+Bolivia         Andean Community             Peru      
+Bolivia         Southern Cone Common Market  Argentina 
+Brazil          Andean Community             Peru      
+Brazil          Latin American and Caribbea  Venezuela 
+Brazil          Latin American Integration   Uruguay   
+Brazil          Southern Cone Common Market  Argentina 
+Chile           Andean Community             Peru      
+Chile           Southern Cone Common Market  Argentina 
+Paraguay        Southern Cone Common Market  Argentina 
+Uruguay         Southern Cone Common Market  Argentina 
+Peru            Union of South American Nat  Ecuador   
+Guyana          Latin American and Caribbea  Venezuela 
+Suriname        Caribbean Community and Com  Guyana    
+Venezuela       Caribbean Community and Com  Guyana    
+Ecuador         Andean Community             Peru      
+Algeria         Arab Maghreb Union           Morocco   
+Libya           Arab Bank for Economic Deve  Sudan     
+Libya           League of Arab States        Egypt     
+Mali            African Development Bank Gr  Cote dIvoi
+Niger           Economic Community of West   Nigeria   
+Namibia         Southern African Customs Un  South Afri
+Namibia         Southern African Developmen  Botswana  
+Zaire           Economic and Monetary Commu  Central Af
+Zaire           Common Market for Eastern a  Zambia    
+Benin           Economic Community of West   Nigeria   
+Burkina Faso    African Development Bank Gr  Cote dIvoi
+Burkina Faso    Council of the Entente       Cote dIvoi
+Botswana        Southern African Customs Un  South Afri
+South Africa    Southern African Developmen  Botswana  
+Zimbabwe        Common Market for Eastern a  Zambia    
+Zimbabwe        Southern African Developmen  Botswana  
+Ghana           African Development Bank Gr  Cote dIvoi
+Rwanda          East African Development Ba  Uganda    
+Tanzania        East African Development Ba  Uganda    
+Cameroon        Central African States Deve  Congo     
+Cameroon        Economic and Monetary Commu  Central Af
+Central Africa  Central African States Deve  Congo     
+Chad            Economic and Monetary Commu  Central Af
+Gabon           Central African States Deve  Congo     
+Sudan           African Union                Ethiopia  
+Sudan           League of Arab States        Egypt     
+South Sudan     African Union                Ethiopia  
+Guinea          African Development Bank Gr  Cote dIvoi
+Liberia         African Development Bank Gr  Cote dIvoi
+Djibouti        African Union                Ethiopia  
+Eritrea         African Union                Ethiopia  
+Somalia         African Union                Ethiopia  
+Kenya           African Union                Ethiopia  
+Kenya           East African Development Ba  Uganda    
+Lesotho         Southern African Customs Un  South Afri
+Malawi          Common Market for Eastern a  Zambia    
+Swaziland       Southern African Customs Un  South Afri
+CPU Time: user 0.051992 sys 0.000000
+CPU Time: user 0.001000 sys 0.000000
+CPU Time: user 0.001000 sys 0.000000
