@@ -1,0 +1,447 @@
+-- Loading resources from sqliterc
+SQLite version 3.6.20
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+[?1034hsqlite> .echo on
+sqlite> .read Pair2.sql
+.read Pair2.sql
+select c1.name,c2.name
+from country c1,city c2
+where c1.code = c2.country
+and c2.population = (select max(population) from city where country = c2.country);
+Name        Name      
+----------  ----------
+Albania     Tirana    
+Greece      Athina    
+Macedonia   Skopje    
+Serbia      Beograd   
+Montenegro  Podgorica 
+Kosovo      Prishtine 
+Andorra     Andorra la
+France      Paris     
+Spain       Madrid    
+Austria     Wien      
+Czech Repu  Praha     
+Germany     Berlin    
+Hungary     Budapest  
+Italy       Roma      
+Liechtenst  Vaduz     
+Slovakia    Bratislava
+Slovenia    Ljubljana 
+Switzerlan  Zurich    
+Belarus     Minsk     
+Latvia      Riga      
+Lithuania   Vilnius   
+Poland      Warszawa  
+Ukraine     Kyiv      
+Russia      Moskva    
+Belgium     Antwerpen 
+Luxembourg  Luxembourg
+Netherland  Amsterdam 
+Bosnia and  Sarajevo  
+Croatia     Zagreb    
+Bulgaria    Sofia     
+Romania     Bucuresti 
+Turkey      Istanbul  
+Denmark     Kobenhavn 
+Estonia     Tallinn   
+Faroe Isla  Torshavn  
+Finland     Helsinki  
+Norway      Oslo      
+Sweden      Stockholm 
+Monaco      Monaco    
+Holy See    Vatican Ci
+Ceuta       Ceuta     
+Melilla     Melilla   
+Iceland     Reykjavik 
+Ireland     Dublin    
+San Marino  San Marino
+Malta       Victoria  
+Moldova     Chisinau  
+Portugal    Lisboa    
+United Kin  London    
+Afghanista  Kabul     
+China       Shanghai  
+Iran        Tehran    
+Pakistan    Karachi   
+Tajikistan  Dushanbe  
+Turkmenist  Ashgabat  
+Uzbekistan  Toshkent  
+Armenia     Yerevan   
+Georgia     Tbilisi   
+Azerbaijan  Baku      
+Bahrain     Al Manamah
+Bangladesh  Dhaka     
+Myanmar     Yangon    
+India       Mumbai    
+Bhutan      Thimphu   
+Brunei      Bandar Ser
+Malaysia    Kuala Lump
+Laos        Vientiane 
+Thailand    Bangkok   
+Cambodia    Phnom Penh
+Vietnam     Ho Chi Min
+Kazakhstan  Almaty    
+North Kore  Pyongyang 
+Kyrgyzstan  Bishkek   
+Hong Kong   Hong Kong 
+Mongolia    Ulaanbaata
+Nepal       Kathmandu 
+Cyprus      Lemesos   
+Gaza Strip  Gaza      
+Israel      Yerushalay
+Egypt       Al Qahirah
+Indonesia   Jakarta   
+Timor-Lest  Dili      
+Papua New   Port Mores
+Iraq        Baghdad   
+Jordan      Amman     
+Kuwait      Kuwait    
+Saudi Arab  Riyadh    
+Syria       Halab     
+Lebanon     Bayrut    
+West Bank   Hebron    
+Japan       Tokyo     
+South Kore  Seoul     
+Maldives    Male      
+Oman        As Seeb   
+United Ara  Dubai     
+Yemen       Sanaa     
+Philippine  Quezon Cit
+Qatar       Doha      
+Singapore   Singapore 
+Sri Lanka   Colombo   
+Taiwan      New Taipei
+Antigua an  Saint John
+Bahamas     Nassau    
+Barbados    Bridgetown
+Belize      Belize Cit
+Guatemala   Ciudad de 
+Mexico      Ciudad de 
+Canada      Toronto   
+United Sta  New York  
+Costa Rica  San Jose  
+Nicaragua   Managua   
+Panama      Panama Cit
+Cuba        La Habana 
+Dominica    Roseau    
+Dominican   Santo Domi
+Haiti       Port-au-Pr
+El Salvado  San Salvad
+Honduras    Tegucigalp
+Grenada     Saint Geor
+Jamaica     Kingston  
+Martinique  Fort-de-Fr
+Montserrat  Plymouth  
+Curacao     Willemstad
+Sint Maart  Philipsbur
+Saint Mart  Marigot   
+Saint Bart  Gustavia  
+Colombia    Bogota    
+Puerto Ric  San Juan  
+Saint Kitt  Basseterre
+Saint Luci  Castries  
+Saint Pier  Saint-Pier
+Saint Vinc  Kingstown 
+Trinidad a  Port-of-Sp
+Virgin Isl  Charlotte 
+Australia   Sydney    
+Fiji        Suva      
+Kiribati    Tarawa    
+Marshall I  Majuro    
+Micronesia  Palikir   
+New Zealan  Auckland  
+Palau       Koror     
+Solomon Is  Honiara   
+Tonga       Nukualofa 
+Tuvalu      Funafuti  
+Tokelau     Fakaofo   
+Vanuatu     Port Vila 
+Samoa       Apia      
+Argentina   Buenos Air
+Bolivia     Santa Cruz
+Brazil      Sao Paulo 
+Chile       Santiago  
+Paraguay    Asuncion  
+Uruguay     Montevideo
+Peru        Lima      
+French Gui  Cayenne   
+Guyana      Georgetown
+Suriname    Paramaribo
+Venezuela   Caracas   
+Ecuador     Guayaquil 
+Algeria     Algiers   
+Libya       Tripoli   
+Mali        Bamako    
+Mauritania  Nouakchott
+Morocco     Casablanca
+Niger       Niamey    
+Tunisia     Tunis     
+Western Sa  El Aaiun  
+Angola      Luanda    
+Congo       Brazzavill
+Namibia     Windhoek  
+Zaire       Kinshasa  
+Zambia      Lusaka    
+Benin       Cotonou   
+Burkina Fa  Ouagadougo
+Nigeria     Lagos     
+Togo        Lome      
+Botswana    Gaborone  
+South Afri  Johannesbu
+Zimbabwe    Harare    
+Cote dIvoi  Abidjan   
+Ghana       Accra     
+Burundi     Bujumbura 
+Rwanda      Kigali    
+Tanzania    Dar es Sal
+Cameroon    Douala    
+Central Af  Bangui    
+Chad        NDjamena  
+Equatorial  Malabo    
+Gabon       Libreville
+Cape Verde  Praia     
+Sudan       Omdurman  
+South Suda  Juba      
+Comoros     Moroni    
+Guinea      Conakry   
+Liberia     Monrovia  
+Djibouti    Djibouti  
+Eritrea     Asmara    
+Ethiopia    Addis Abab
+Kenya       Nairobi   
+Gambia      Banjul    
+Senegal     Dakar     
+Sierra Leo  Freetown  
+Uganda      Kampala   
+Lesotho     Maseru    
+Madagascar  Antananari
+Malawi      Lilongwe  
+Mozambique  Maputo    
+Swaziland   Mbabane   
+Reunion     Saint-Deni
+Sao Tome a  Sao Tome  
+Seychelles  Victoria  
+CPU Time: user 3.144521 sys 0.002000
+CPU Time: user 0.010999 sys 0.000000
+select c1.name,c2.name
+from country c1,city c2
+where c1.code = c2.country
+and c2.population = (select max(population) from city where country = c2.country);
+Name        Name      
+----------  ----------
+Albania     Tirana    
+Greece      Athina    
+Macedonia   Skopje    
+Serbia      Beograd   
+Montenegro  Podgorica 
+Kosovo      Prishtine 
+Andorra     Andorra la
+France      Paris     
+Spain       Madrid    
+Austria     Wien      
+Czech Repu  Praha     
+Germany     Berlin    
+Hungary     Budapest  
+Italy       Roma      
+Liechtenst  Vaduz     
+Slovakia    Bratislava
+Slovenia    Ljubljana 
+Switzerlan  Zurich    
+Belarus     Minsk     
+Latvia      Riga      
+Lithuania   Vilnius   
+Poland      Warszawa  
+Ukraine     Kyiv      
+Russia      Moskva    
+Belgium     Antwerpen 
+Luxembourg  Luxembourg
+Netherland  Amsterdam 
+Bosnia and  Sarajevo  
+Croatia     Zagreb    
+Bulgaria    Sofia     
+Romania     Bucuresti 
+Turkey      Istanbul  
+Denmark     Kobenhavn 
+Estonia     Tallinn   
+Faroe Isla  Torshavn  
+Finland     Helsinki  
+Norway      Oslo      
+Sweden      Stockholm 
+Monaco      Monaco    
+Holy See    Vatican Ci
+Ceuta       Ceuta     
+Melilla     Melilla   
+Iceland     Reykjavik 
+Ireland     Dublin    
+San Marino  San Marino
+Malta       Victoria  
+Moldova     Chisinau  
+Portugal    Lisboa    
+United Kin  London    
+Afghanista  Kabul     
+China       Shanghai  
+Iran        Tehran    
+Pakistan    Karachi   
+Tajikistan  Dushanbe  
+Turkmenist  Ashgabat  
+Uzbekistan  Toshkent  
+Armenia     Yerevan   
+Georgia     Tbilisi   
+Azerbaijan  Baku      
+Bahrain     Al Manamah
+Bangladesh  Dhaka     
+Myanmar     Yangon    
+India       Mumbai    
+Bhutan      Thimphu   
+Brunei      Bandar Ser
+Malaysia    Kuala Lump
+Laos        Vientiane 
+Thailand    Bangkok   
+Cambodia    Phnom Penh
+Vietnam     Ho Chi Min
+Kazakhstan  Almaty    
+North Kore  Pyongyang 
+Kyrgyzstan  Bishkek   
+Hong Kong   Hong Kong 
+Mongolia    Ulaanbaata
+Nepal       Kathmandu 
+Cyprus      Lemesos   
+Gaza Strip  Gaza      
+Israel      Yerushalay
+Egypt       Al Qahirah
+Indonesia   Jakarta   
+Timor-Lest  Dili      
+Papua New   Port Mores
+Iraq        Baghdad   
+Jordan      Amman     
+Kuwait      Kuwait    
+Saudi Arab  Riyadh    
+Syria       Halab     
+Lebanon     Bayrut    
+West Bank   Hebron    
+Japan       Tokyo     
+South Kore  Seoul     
+Maldives    Male      
+Oman        As Seeb   
+United Ara  Dubai     
+Yemen       Sanaa     
+Philippine  Quezon Cit
+Qatar       Doha      
+Singapore   Singapore 
+Sri Lanka   Colombo   
+Taiwan      New Taipei
+Antigua an  Saint John
+Bahamas     Nassau    
+Barbados    Bridgetown
+Belize      Belize Cit
+Guatemala   Ciudad de 
+Mexico      Ciudad de 
+Canada      Toronto   
+United Sta  New York  
+Costa Rica  San Jose  
+Nicaragua   Managua   
+Panama      Panama Cit
+Cuba        La Habana 
+Dominica    Roseau    
+Dominican   Santo Domi
+Haiti       Port-au-Pr
+El Salvado  San Salvad
+Honduras    Tegucigalp
+Grenada     Saint Geor
+Jamaica     Kingston  
+Martinique  Fort-de-Fr
+Montserrat  Plymouth  
+Curacao     Willemstad
+Sint Maart  Philipsbur
+Saint Mart  Marigot   
+Saint Bart  Gustavia  
+Colombia    Bogota    
+Puerto Ric  San Juan  
+Saint Kitt  Basseterre
+Saint Luci  Castries  
+Saint Pier  Saint-Pier
+Saint Vinc  Kingstown 
+Trinidad a  Port-of-Sp
+Virgin Isl  Charlotte 
+Australia   Sydney    
+Fiji        Suva      
+Kiribati    Tarawa    
+Marshall I  Majuro    
+Micronesia  Palikir   
+New Zealan  Auckland  
+Palau       Koror     
+Solomon Is  Honiara   
+Tonga       Nukualofa 
+Tuvalu      Funafuti  
+Tokelau     Fakaofo   
+Vanuatu     Port Vila 
+Samoa       Apia      
+Argentina   Buenos Air
+Bolivia     Santa Cruz
+Brazil      Sao Paulo 
+Chile       Santiago  
+Paraguay    Asuncion  
+Uruguay     Montevideo
+Peru        Lima      
+French Gui  Cayenne   
+Guyana      Georgetown
+Suriname    Paramaribo
+Venezuela   Caracas   
+Ecuador     Guayaquil 
+Algeria     Algiers   
+Libya       Tripoli   
+Mali        Bamako    
+Mauritania  Nouakchott
+Morocco     Casablanca
+Niger       Niamey    
+Tunisia     Tunis     
+Western Sa  El Aaiun  
+Angola      Luanda    
+Congo       Brazzavill
+Namibia     Windhoek  
+Zaire       Kinshasa  
+Zambia      Lusaka    
+Benin       Cotonou   
+Burkina Fa  Ouagadougo
+Nigeria     Lagos     
+Togo        Lome      
+Botswana    Gaborone  
+South Afri  Johannesbu
+Zimbabwe    Harare    
+Cote dIvoi  Abidjan   
+Ghana       Accra     
+Burundi     Bujumbura 
+Rwanda      Kigali    
+Tanzania    Dar es Sal
+Cameroon    Douala    
+Central Af  Bangui    
+Chad        NDjamena  
+Equatorial  Malabo    
+Gabon       Libreville
+Cape Verde  Praia     
+Sudan       Omdurman  
+South Suda  Juba      
+Comoros     Moroni    
+Guinea      Conakry   
+Liberia     Monrovia  
+Djibouti    Djibouti  
+Eritrea     Asmara    
+Ethiopia    Addis Abab
+Kenya       Nairobi   
+Gambia      Banjul    
+Senegal     Dakar     
+Sierra Leo  Freetown  
+Uganda      Kampala   
+Lesotho     Maseru    
+Madagascar  Antananari
+Malawi      Lilongwe  
+Mozambique  Maputo    
+Swaziland   Mbabane   
+Reunion     Saint-Deni
+Sao Tome a  Sao Tome  
+Seychelles  Victoria  
+CPU Time: user 0.009998 sys 0.000000
+CPU Time: user 0.000000 sys 0.001000
+sqlite> .quit
+.quit
